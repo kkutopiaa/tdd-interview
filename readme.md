@@ -47,7 +47,7 @@
     - LocalDateTime的使用
     - EnumType的使用
 - Entity到DTO
-    - 精通第三方自动化转化方案如modelmapper
+    -  [&#x2714;] 精通第三方自动化转化方案如modelmapper
 - Jackson
     - 精通处理对象循环依赖处理
     - 精通json字段到对象转化
@@ -65,3 +65,6 @@
 # 测试结果
 1. TestRestTemplate提交数据的各种模式（get、post、put、delete）
 ![img.png](imgs/img.png)
+
+2. 精通第三方自动化转化方案如modelmapper
+![img.png](img.png)
