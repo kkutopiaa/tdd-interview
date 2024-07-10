@@ -1,9 +1,10 @@
 package com.kuan.tddinterview.springboottest;
 
+import com.kuan.tddinterview.springboottest.exception.NotHandleTestRuntimeException;
+import com.kuan.tddinterview.springboottest.exception.TestRuntimeException;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/test")
@@ -17,6 +18,16 @@ public class TestController {
     @GetMapping(path = "/type")
     public TestObject<TestGenericType> getType() {
         return new TestObject<>(Arrays.asList(new TestGenericType(), new TestGenericType()));
+    }
+
+    @GetMapping("/handle-exception")
+    public String handleException() {
+        throw new TestRuntimeException("something test runtime exception by diy");
+    }
+
+    @GetMapping("/occur-exception")
+    public String occurException() {
+        throw new NotHandleTestRuntimeException("whatever");
     }
 
     @PostMapping

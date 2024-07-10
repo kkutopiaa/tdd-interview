@@ -23,12 +23,12 @@
     - 移动方法到对象，并且处理冲突
 - springboot test这边需要掌握的
     - [&#x2714;] TestRestTemplate提交数据的各种模式（get、post、put、delete） 
-    - 全局exception处理
+    - [&#x2714;] 全局exception处理
     - 一个需要登陆的接口怎么TDD
     - 一个有分页的接口怎么TDD
     - 国际化怎么做的
     - validation怎么做
-    - 抛出异常怎么做
+    - [&#x2714;] 抛出异常怎么做
     - 各种Controller参数获取怎么操作
     - 参数化测试怎么做
 - Mock需要掌握的
