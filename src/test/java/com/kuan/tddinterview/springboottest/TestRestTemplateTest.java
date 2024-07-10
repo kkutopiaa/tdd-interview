@@ -11,6 +11,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 import java.util.List;
+import java.util.Objects;
 
 /**
  * 测试： TestRestTemplate提交数据的各种模式（get、post、put、delete）
@@ -28,7 +29,6 @@ public class TestRestTemplateTest {
         ResponseEntity<String> responseEntity = restTemplate.getForEntity(api, String.class);
         Assertions.assertEquals(HttpStatus.OK, responseEntity.getStatusCode());
     }
-
 
     @Test
     public void givenGetApi_whenUseForEntity_thenReceiveCorrectContent() {
@@ -87,7 +87,7 @@ public class TestRestTemplateTest {
         ResponseEntity<TestObject<TestGenericType>> response = restTemplate.exchange(api + "/type", HttpMethod.GET,
                 null, new ParameterizedTypeReference<TestObject<TestGenericType>>() {
                 });
-        List<TestGenericType> elements = response.getBody().getElements();
+        List<TestGenericType> elements = Objects.requireNonNull(response.getBody()).getElements();
         Assertions.assertEquals(2, elements.size());
     }
 
@@ -97,7 +97,7 @@ public class TestRestTemplateTest {
         ResponseEntity<TestObject<TestGenericType>> response = restTemplate.exchange(api + "/type", HttpMethod.GET,
                 null, new ParameterizedTypeReference<TestObject<TestGenericType>>() {
                 });
-        List<TestGenericType> elements = response.getBody().getElements();
+        List<TestGenericType> elements = Objects.requireNonNull(response.getBody()).getElements();
         Assertions.assertEquals(TestGenericType.class, elements.get(0).getClass());
     }
 

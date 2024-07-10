@@ -38,8 +38,4 @@ public class LombokTest {
         Assertions.assertEquals("TestLombok(name=test)", testLombok.toString());
     }
 
-
-
-
-
 }

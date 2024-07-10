@@ -4,8 +4,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.modelmapper.Converter;
 import org.modelmapper.ModelMapper;
-import org.modelmapper.TypeToken;
-import org.modelmapper.spi.MappingContext;
 
 import java.util.List;
 import java.util.Set;
@@ -62,16 +60,14 @@ public class ModelMapperTest {
         return specificFieldEntities.stream().map(this::mapSpecificField).toList();
     }
 
-
     private EnumDto mapEnumTypeField() {
         EnumEntity enumEntity = new EnumEntity(Source.Web);
         return modelMapper.typeMap(EnumEntity.class, EnumDto.class)
-                .addMappings(mapping -> {
-                    mapping.using((Converter<Source, String>) context -> context.getSource().getType())
-                            .map(EnumEntity::getSource, EnumDto::setSource);
-                }).map(enumEntity);
+                .addMappings(mapping ->
+                        mapping.using((Converter<Source, String>) context -> context.getSource().getType())
+                                .map(EnumEntity::getSource, EnumDto::setSource))
+                .map(enumEntity);
     }
-
 
     private SpecificFieldDto mapSpecificField() {
         return mapSpecificField(new SpecificFieldEntity(expectedPhone1));
