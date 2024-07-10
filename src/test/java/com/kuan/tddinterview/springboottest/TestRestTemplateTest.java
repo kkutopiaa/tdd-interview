@@ -5,9 +5,12 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
+import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+
+import java.util.List;
 
 /**
  * 测试： TestRestTemplate提交数据的各种模式（get、post、put、delete）
@@ -69,6 +72,33 @@ public class TestRestTemplateTest {
     public void givenDeleteApi_whenUseForExchange_thenReceiveCorrectContent() {
         ResponseEntity<String> response = restTemplate.exchange(api, HttpMethod.DELETE, null, String.class);
         Assertions.assertEquals("from delete", response.getBody());
+    }
+
+    @Test
+    public void givenGetApi_whenUseForExchange_thenReceiveOk() {
+        ResponseEntity<TestObject<TestGenericType>> response = restTemplate.exchange(api + "/type", HttpMethod.GET,
+                null, new ParameterizedTypeReference<TestObject<TestGenericType>>() {
+                });
+        Assertions.assertEquals(HttpStatus.OK, response.getStatusCode());
+    }
+
+    @Test
+    public void givenGetApi_whenUseForExchange_thenReceiveCorrectSize() {
+        ResponseEntity<TestObject<TestGenericType>> response = restTemplate.exchange(api + "/type", HttpMethod.GET,
+                null, new ParameterizedTypeReference<TestObject<TestGenericType>>() {
+                });
+        List<TestGenericType> elements = response.getBody().getElements();
+        Assertions.assertEquals(2, elements.size());
+    }
+
+
+    @Test
+    public void givenGetApi_whenUseForExchange_thenReceiveParameterizeType() {
+        ResponseEntity<TestObject<TestGenericType>> response = restTemplate.exchange(api + "/type", HttpMethod.GET,
+                null, new ParameterizedTypeReference<TestObject<TestGenericType>>() {
+                });
+        List<TestGenericType> elements = response.getBody().getElements();
+        Assertions.assertEquals(TestGenericType.class, elements.get(0).getClass());
     }
 
 
