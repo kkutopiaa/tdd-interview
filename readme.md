@@ -29,7 +29,7 @@
     - 国际化怎么做的
     - validation怎么做
     - [&#x2714;] 抛出异常怎么做
-    - 各种Controller参数获取怎么操作
+    - [&#x2714;] 各种Controller参数获取怎么操作
     - 参数化测试怎么做
 - Mock需要掌握的
     - mock service、repository怎么做

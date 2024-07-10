@@ -1,5 +1,7 @@
-package com.kuan.tddinterview.springboottest;
+package com.kuan.tddinterview.springboottest.controller;
 
+import com.kuan.tddinterview.springboottest.TestGenericType;
+import com.kuan.tddinterview.springboottest.TestObject;
 import com.kuan.tddinterview.springboottest.exception.NotHandleTestRuntimeException;
 import com.kuan.tddinterview.springboottest.exception.TestRuntimeException;
 import org.springframework.web.bind.annotation.*;
