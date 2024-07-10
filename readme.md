@@ -67,4 +67,7 @@
 ![img.png](imgs/img.png)
 
 2. 精通第三方自动化转化方案如modelmapper
-![img.png](img.png)
+![img.png](imgs/img2.png)
+
+3. 精通使用lombok的各项功能(getter\setter\constructor\builder)
+![img_1.png](imgs/img3.png)
