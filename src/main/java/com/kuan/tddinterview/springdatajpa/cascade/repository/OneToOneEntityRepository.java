@@ -1,6 +1,6 @@
-package com.kuan.tddinterview.springdatajpa.repository;
+package com.kuan.tddinterview.springdatajpa.cascade.repository;
 
-import com.kuan.tddinterview.springdatajpa.one2one.OneToOneEntity;
+import com.kuan.tddinterview.springdatajpa.cascade.one2one.OneToOneEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

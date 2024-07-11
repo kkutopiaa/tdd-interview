@@ -38,7 +38,7 @@
     - [&#x2714;] 精通OneToOne，关联表的设置，不同cascade type在存储、删除时的效果
     - [&#x2714;] 精通OneToMany，ManyToOne，关联表，不同cascade type在存储、删除时的效果
     - [&#x2714;] 精通ManyToMany，关联表，不同cascade type在存储、删除时的效果
-    - Entity继承的三种表现
+    - [&#x2714;] Entity继承的三种表现
     - 以上可以在这个系列视频学习 https://www.youtube.com/watch?v=9ME94z46fsU&list=PLG5RS5k7TfUqDHBklOB35W3MamGLBLJQW
     - 精通解决n+1的4种方法 https://www.bilibili.com/video/BV1x24y1z7bd?p=26&vd_source=9232efce708d84b3864e12befa5f2526
     - 精通specification和criterial api的使用

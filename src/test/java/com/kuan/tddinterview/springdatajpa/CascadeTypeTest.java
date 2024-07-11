@@ -1,12 +1,12 @@
 package com.kuan.tddinterview.springdatajpa;
 
-import com.kuan.tddinterview.springdatajpa.many2many.CourseEntity;
-import com.kuan.tddinterview.springdatajpa.many2many.TeacherEntity;
-import com.kuan.tddinterview.springdatajpa.one2manyandmany2one.ClassEntity;
-import com.kuan.tddinterview.springdatajpa.one2manyandmany2one.StudentEntity;
-import com.kuan.tddinterview.springdatajpa.one2one.OneToOneEntity;
-import com.kuan.tddinterview.springdatajpa.one2one.OneToOneExtEntity;
-import com.kuan.tddinterview.springdatajpa.repository.*;
+import com.kuan.tddinterview.springdatajpa.cascade.many2many.CourseEntity;
+import com.kuan.tddinterview.springdatajpa.cascade.many2many.TeacherEntity;
+import com.kuan.tddinterview.springdatajpa.cascade.one2manyandmany2one.ClassEntity;
+import com.kuan.tddinterview.springdatajpa.cascade.one2manyandmany2one.StudentEntity;
+import com.kuan.tddinterview.springdatajpa.cascade.one2one.OneToOneEntity;
+import com.kuan.tddinterview.springdatajpa.cascade.one2one.OneToOneExtEntity;
+import com.kuan.tddinterview.springdatajpa.cascade.repository.*;
 
 import javax.annotation.Resource;
 

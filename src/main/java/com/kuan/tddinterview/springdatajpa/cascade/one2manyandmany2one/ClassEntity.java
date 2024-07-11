@@ -1,4 +1,4 @@
-package com.kuan.tddinterview.springdatajpa.many2many;
+package com.kuan.tddinterview.springdatajpa.cascade.one2manyandmany2one;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -13,16 +13,15 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class CourseEntity {
+public class ClassEntity {
 
     @Id
     @GeneratedValue
     private Long id;
 
-    private String description;
+    private String name;
 
-    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
-    private List<TeacherEntity> teachers;
-
+    @OneToMany(mappedBy = "classEntity", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    private List<StudentEntity> students;
 
 }

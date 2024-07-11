@@ -1,4 +1,4 @@
-package com.kuan.tddinterview.springdatajpa.many2many;
+package com.kuan.tddinterview.springdatajpa.cascade.many2many;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
