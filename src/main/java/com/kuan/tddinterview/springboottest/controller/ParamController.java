@@ -2,8 +2,9 @@ package com.kuan.tddinterview.springboottest.controller;
 
 
 import com.kuan.tddinterview.springboottest.TestRequestBody;
-import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletRequest;
 
 @RestController
 @RequestMapping("/api/v1/param")
