@@ -25,7 +25,7 @@ public class GlobalExceptionHandler {
         Map<String, String> filedErrorMessages = bindingResult.getFieldErrors().stream()
                 .collect(Collectors.toMap(FieldError::getField, e -> e.getDefaultMessage()));
 
-        return new ApiError("validate errors", filedErrorMessages);
+        return new ApiError(exception.getNestedPath(), "validate errors", filedErrorMessages);
     }
 
 

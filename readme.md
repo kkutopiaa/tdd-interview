@@ -24,7 +24,7 @@
 - springboot test这边需要掌握的
     - [&#x2714;] TestRestTemplate提交数据的各种模式（get、post、put、delete） 
     - [&#x2714;] 全局exception处理
-    - 一个需要登陆的接口怎么TDD
+    - [&#x2714;] 一个需要登陆的接口怎么TDD
     - 一个有分页的接口怎么TDD
     - 国际化怎么做的
     - [&#x2714;] validation怎么做
