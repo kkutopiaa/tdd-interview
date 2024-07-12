@@ -79,46 +79,46 @@ public class LoginControllerTest {
             Assertions.assertFalse(Objects.requireNonNull(response.getHeaders()).containsKey("WWW-Authenticate"));
         }
 
+        private void unAuthenticate() {
+            restTemplate.getRestTemplate()
+                    .getInterceptors()
+                    .add(new BasicAuthenticationInterceptor("test-user", "whatever"));
+        }
     }
 
-    @Test
-    public void givenPostLogin_whenWithValidUserCredentials_thenReceiveOk() {
-        User user = User.builder().displayName("display-name-for-user").username("test-user").password("passw0rd").build();
-        userService.save(user);
-        authenticate();
-        ResponseEntity<Object> response = login(Object.class);
-        Assertions.assertEquals(HttpStatus.OK, response.getStatusCode());
+    @Nested
+    class HappyPath {
+
+        @Test
+        public void givenPostLogin_whenWithValidUserCredentials_thenReceiveOk() {
+            User user = User.builder().displayName("display-name-for-user").username("test-user").password("passw0rd").build();
+            userService.save(user);
+            authenticate();
+            ResponseEntity<Object> response = login(Object.class);
+            Assertions.assertEquals(HttpStatus.OK, response.getStatusCode());
+        }
+
+        @Test
+        public void givenPostLogin_whenWithValidUserCredentials_thenReceiveLoggedInUserId() {
+            User user = User.builder().displayName("display-name-for-user").username("test-user").password("passw0rd").build();
+            User inDB = userService.save(user);
+            authenticate();
+            ResponseEntity<Map<String, Object>> response = restTemplate.exchange(api, HttpMethod.POST, null,
+                    new ParameterizedTypeReference<Map<String, Object>>() {
+                    });
+            Assertions.assertEquals(inDB.getId(), Long.valueOf(Objects.requireNonNull(response.getBody()).get("id") + ""));
+        }
+
+        private void authenticate() {
+            restTemplate.getRestTemplate()
+                    .getInterceptors()
+                    .add(new BasicAuthenticationInterceptor("test-user", "passw0rd"));
+        }
+
     }
-
-    @Test
-    public void givenPostLogin_whenWithValidUserCredentials_thenReceiveLoggedInUserId() {
-        User user = User.builder().displayName("display-name-for-user").username("test-user").password("passw0rd").build();
-        User inDB = userService.save(user);
-        authenticate();
-        ResponseEntity<Map<String, Object>> response = restTemplate.exchange(api, HttpMethod.POST, null,
-                new ParameterizedTypeReference<Map<String, Object>>() {
-                });
-        Assertions.assertEquals(inDB.getId(), Long.valueOf(Objects.requireNonNull(response.getBody()).get("id") + ""));
-    }
-
-
-    private void unAuthenticate() {
-        restTemplate.getRestTemplate()
-                .getInterceptors()
-                .add(new BasicAuthenticationInterceptor("test-user", "whatever"));
-    }
-
-
-    private void authenticate() {
-        restTemplate.getRestTemplate()
-                .getInterceptors()
-                .add(new BasicAuthenticationInterceptor("test-user", "passw0rd"));
-    }
-
 
     private <T> ResponseEntity<T> login(Class<T> responseType) {
         return restTemplate.postForEntity(api, null, responseType);
     }
-
 
 }
