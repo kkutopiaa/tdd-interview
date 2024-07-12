@@ -17,7 +17,7 @@ import java.util.stream.IntStream;
 
 @ActiveProfiles(profiles = "test")
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class PaginationTest {
+public class PaginationControllerTest {
 
     private final String api = "/api/v1/pagination";
 
