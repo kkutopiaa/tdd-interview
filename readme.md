@@ -21,7 +21,7 @@
     - 提取参数
     - 抽变量
     - 移动方法到对象，并且处理冲突
-- springboot test这边需要掌握的
+- [&#x2714;] springboot test这边需要掌握的
     - [&#x2714;] TestRestTemplate提交数据的各种模式（get、post、put、delete） 
     - [&#x2714;] 全局exception处理
     - [&#x2714;] 一个需要登陆的接口怎么TDD
@@ -46,13 +46,13 @@
     - CreatedAt, UpdatedAt的设置
     - LocalDateTime的使用
     - EnumType的使用
-- Entity到DTO
+- [&#x2714;] Entity到DTO
     -  [&#x2714;] 精通第三方自动化转化方案如modelmapper
 - Jackson
     - 精通处理对象循环依赖处理
     - 精通json字段到对象转化
     - 精通读取想要的指定格式
-- Lombok
+- [&#x2714;] Lombok
     - [&#x2714;] 精通使用lombok的各项功能
 - H2
     - 能看懂出错的冲突限制
