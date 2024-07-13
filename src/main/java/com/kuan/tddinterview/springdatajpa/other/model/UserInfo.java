@@ -7,7 +7,6 @@ import lombok.experimental.SuperBuilder;
 import javax.persistence.*;
 import java.util.List;
 
-//UserInfo实体对象如下：
 @Entity
 @Data
 @SuperBuilder
