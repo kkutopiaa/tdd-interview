@@ -1,7 +1,8 @@
-package com.kuan.tddinterview.springdatajpa.nplus1.fetchmodel;
+package com.kuan.tddinterview.springdatajpa.nplus1.fetchmode;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.kuan.tddinterview.springdatajpa.nplus1.BaseEntity;
+import com.kuan.tddinterview.springdatajpa.nplus1.NPlusOneEntity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,7 +17,7 @@ import javax.persistence.*;
 @SuperBuilder
 @AllArgsConstructor
 @NoArgsConstructor
-public class AddressFetchModel extends BaseEntity {
+public class AddressFetchModel extends BaseEntity implements NPlusOneEntity {
 
     private String city;
 

@@ -1,6 +1,7 @@
 package com.kuan.tddinterview.springdatajpa.nplus1.entitygraph;
 
 import com.kuan.tddinterview.springdatajpa.nplus1.BaseEntity;
+import com.kuan.tddinterview.springdatajpa.nplus1.NPlusOneEntity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,7 +19,7 @@ import java.util.List;
 @NoArgsConstructor
 @Table
 @NamedEntityGraph(name = "addressGraph", attributeNodes = @NamedAttributeNode(value = "addressList"))
-public class UserInfoEntityGraph extends BaseEntity {
+public class UserInfoEntityGraph extends BaseEntity  implements NPlusOneEntity {
     private String name;
 
     private String telephone;

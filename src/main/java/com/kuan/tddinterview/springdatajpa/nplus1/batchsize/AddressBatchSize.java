@@ -1,6 +1,7 @@
 package com.kuan.tddinterview.springdatajpa.nplus1.batchsize;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.kuan.tddinterview.springdatajpa.nplus1.NPlusOneEntity;
 import com.kuan.tddinterview.springdatajpa.other.BaseEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -16,7 +17,7 @@ import javax.persistence.*;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class AddressBatchSize {
+public class AddressBatchSize  implements NPlusOneEntity {
 
     @Id
     @GeneratedValue

@@ -1,6 +1,7 @@
-package com.kuan.tddinterview.springdatajpa.nplus1.fetchmodel;
+package com.kuan.tddinterview.springdatajpa.nplus1.fetchmode;
 
 import com.kuan.tddinterview.springdatajpa.nplus1.BaseEntity;
+import com.kuan.tddinterview.springdatajpa.nplus1.NPlusOneEntity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,7 +18,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table
-public class UserInfoFetchModel extends BaseEntity {
+public class UserInfoFetchModel extends BaseEntity implements NPlusOneEntity {
     private String name;
 
     private String telephone;

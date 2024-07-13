@@ -1,6 +1,7 @@
 package com.kuan.tddinterview.springdatajpa.nplus1.reproduce;
 
 import com.kuan.tddinterview.springdatajpa.nplus1.BaseEntity;
+import com.kuan.tddinterview.springdatajpa.nplus1.NPlusOneEntity;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
@@ -14,7 +15,7 @@ import java.util.List;
 @NoArgsConstructor
 @Table
 @ToString(exclude = "addressList")
-public class UserInfo extends BaseEntity {
+public class UserInfo extends BaseEntity implements NPlusOneEntity {
     private String name;
 
     private String telephone;

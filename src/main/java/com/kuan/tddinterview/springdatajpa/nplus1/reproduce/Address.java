@@ -2,6 +2,7 @@ package com.kuan.tddinterview.springdatajpa.nplus1.reproduce;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.kuan.tddinterview.springdatajpa.nplus1.BaseEntity;
+import com.kuan.tddinterview.springdatajpa.nplus1.NPlusOneEntity;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
@@ -15,7 +16,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString(exclude = "userInfo")
-public class Address extends BaseEntity {
+public class Address extends BaseEntity implements NPlusOneEntity {
 
     private String city;
 

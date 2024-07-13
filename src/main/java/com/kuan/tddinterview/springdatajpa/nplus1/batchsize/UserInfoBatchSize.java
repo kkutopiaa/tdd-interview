@@ -1,5 +1,6 @@
 package com.kuan.tddinterview.springdatajpa.nplus1.batchsize;
 
+import com.kuan.tddinterview.springdatajpa.nplus1.NPlusOneEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -14,7 +15,7 @@ import java.util.List;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserInfoBatchSize {
+public class UserInfoBatchSize implements NPlusOneEntity {
 
     @Id
     @GeneratedValue
