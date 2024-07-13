@@ -1,11 +1,13 @@
 # TDD 技能
 
 思维方面：
+
 1. 必须是先写一个失败的测试，运行一次，失败了再写实现代码
 2. 必须是先实现，再重构，禁止一切提前写实现的方式
 3. 当发现2处重复时，马上重构代码（对于idea的重构功能要求很高）
 
 步骤方面：
+
 - 写新功能时
     - 先运行全部测试，确保是通过的再写新代码
     - 先从happy path出发，再到sad path
@@ -16,13 +18,14 @@
     - 重构功能，并经常运行测试
 
 须要掌握的技能：
+
 - Idea重构功能的使用
     - 抽方法
     - 提取参数
     - 抽变量
     - 移动方法到对象，并且处理冲突
 - [&#x2714;] springboot test这边需要掌握的
-    - [&#x2714;] TestRestTemplate提交数据的各种模式（get、post、put、delete） 
+    - [&#x2714;] TestRestTemplate提交数据的各种模式（get、post、put、delete）
     - [&#x2714;] 全局exception处理
     - [&#x2714;] 一个需要登陆的接口怎么TDD
     - [&#x2714;] 一个有分页的接口怎么TDD
@@ -47,8 +50,8 @@
     - [&#x2714;] LocalDateTime的使用
     - [&#x2714;] EnumType的使用
 - [&#x2714;] Entity到DTO
-    -  [&#x2714;] 精通第三方自动化转化方案如modelmapper
-    - mapstruct 使用
+    - [&#x2714;] 精通第三方自动化转化方案如modelmapper
+    - [&#x2714;]  mapstruct 使用
 - [&#x2714;] Jackson
     - [&#x2714;] 精通处理对象循环依赖处理
     - [&#x2714;] 精通json字段到对象转化
@@ -56,19 +59,19 @@
 - [&#x2714;] Lombok
     - [&#x2714;] 精通使用lombok的各项功能
 - H2
-    - 能看懂出错的冲突限制
-
+    - [&#x2714;] 能看懂出错的冲突限制
 
 选择掌握的技能（提速）：
+
 - Vim按键的使用
 
-
 # 测试结果
+
 1. TestRestTemplate提交数据的各种模式（get、post、put、delete）
-![img.png](imgs/img.png)
+   ![img.png](imgs/img.png)
 
 2. 精通第三方自动化转化方案如modelmapper
-![img.png](imgs/img2.png)
+   ![img.png](imgs/img2.png)
 
 3. 精通使用lombok的各项功能(getter\setter\constructor\builder)
-![img_1.png](imgs/img3.png)
+   ![img_1.png](imgs/img3.png)
