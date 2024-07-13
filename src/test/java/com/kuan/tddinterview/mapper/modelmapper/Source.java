@@ -1,4 +1,4 @@
-package com.kuan.tddinterview.modelmapper;
+package com.kuan.tddinterview.mapper.modelmapper;
 
 import java.util.Map;
 import java.util.function.Function;

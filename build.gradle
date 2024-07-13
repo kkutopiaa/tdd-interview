@@ -17,6 +17,7 @@ repositories {
     mavenCentral()
 }
 
+
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-validation
@@ -27,18 +28,17 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-security'
     // https://mvnrepository.com/artifact/org.springframework.security/spring-security-test
     testImplementation 'org.springframework.security:spring-security-test'
-//     https://mvnrepository.com/artifact/org.apache.httpcomponents.client5/httpclient5
-//    implementation 'org.apache.httpcomponents.client5:httpclient'
-// https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient
+    // https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient
     implementation 'org.apache.httpcomponents:httpclient:4.5.14'
 
+    // https://mvnrepository.com/artifact/org.mapstruct/mapstruct
+    implementation 'org.mapstruct:mapstruct:1.5.5.Final'
 
-//    // https://mvnrepository.com/artifact/org.springframework.security/spring-security-core
-//    implementation 'org.springframework.security:spring-security-core:6.3.1'
-//    // https://mvnrepository.com/artifact/org.springframework.security/spring-security-web
-//    implementation 'org.springframework.security:spring-security-web:6.3.1'
-//    // https://mvnrepository.com/artifact/org.springframework.security/spring-security-config
-//    implementation 'org.springframework.security:spring-security-config:6.3.1'
+    annotationProcessor "org.projectlombok:lombok-mapstruct-binding:0.2.0"
+    testAnnotationProcessor "org.projectlombok:lombok-mapstruct-binding:0.2.0"
+    annotationProcessor ("org.mapstruct:mapstruct-processor:1.5.5.Final")
+    testAnnotationProcessor("org.mapstruct:mapstruct-processor:1.5.5.Final")
+
 
     // https://mvnrepository.com/artifact/org.modelmapper/modelmapper
     implementation 'org.modelmapper:modelmapper:3.2.0'
@@ -57,6 +57,14 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.3'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
+
+compileJava {
+    options.compilerArgs = [
+            '-Amapstruct.suppressGeneratorTimestamp=true',
+            '-Amapstruct.suppressGeneratorVersionInfoComment=true'
+    ]
+}
+
 
 tasks.named('test') {
     useJUnitPlatform()

@@ -1,4 +1,4 @@
-package com.kuan.tddinterview.modelmapper;
+package com.kuan.tddinterview.mapper.modelmapper;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
