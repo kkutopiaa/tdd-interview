@@ -1,6 +1,5 @@
-package com.kuan.tddinterview.springdatajpa.other.repository;
+package com.kuan.tddinterview.springdatajpa.nplus1.reproduce;
 
-import com.kuan.tddinterview.springdatajpa.other.model.Address;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

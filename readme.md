@@ -43,7 +43,7 @@
     - [&#x2714;] 精通ManyToMany，关联表，不同cascade type在存储、删除时的效果
     - [&#x2714;] Entity继承的三种表现
     - 以上可以在这个系列视频学习 https://www.youtube.com/watch?v=9ME94z46fsU&list=PLG5RS5k7TfUqDHBklOB35W3MamGLBLJQW
-    - 精通解决n+1的4种方法 https://www.bilibili.com/video/BV1x24y1z7bd?p=26&vd_source=9232efce708d84b3864e12befa5f2526
+    - [&#x2714;] 精通解决n+1的4种方法 https://www.bilibili.com/video/BV1x24y1z7bd?p=26&vd_source=9232efce708d84b3864e12befa5f2526
     - [&#x2714;] 精通specification和criterial api的使用
     - [&#x2714;] 精通pageable
     - [&#x2714;] CreatedAt, UpdatedAt的设置
@@ -58,7 +58,7 @@
     - [&#x2714;] 精通读取想要的指定格式
 - [&#x2714;] Lombok
     - [&#x2714;] 精通使用lombok的各项功能
-- H2
+- [&#x2714;] H2
     - [&#x2714;] 能看懂出错的冲突限制
 
 选择掌握的技能（提速）：
@@ -66,7 +66,8 @@
 - Vim按键的使用
 
 # 测试结果
-
+0. 总体的测试结果
+![img.png](imgs/img0.png)
 1. TestRestTemplate提交数据的各种模式（get、post、put、delete）
    ![img.png](imgs/img.png)
 

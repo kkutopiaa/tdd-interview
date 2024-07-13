@@ -1,6 +1,6 @@
-package com.kuan.tddinterview.springdatajpa.other.model;
+package com.kuan.tddinterview.springdatajpa.nplus1.reproduce;
 
-import com.kuan.tddinterview.springdatajpa.other.BaseEntity;
+import com.kuan.tddinterview.springdatajpa.nplus1.BaseEntity;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 

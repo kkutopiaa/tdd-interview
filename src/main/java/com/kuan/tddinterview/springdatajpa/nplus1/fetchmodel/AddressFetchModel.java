@@ -1,8 +1,10 @@
-package com.kuan.tddinterview.springdatajpa.other.model;
+package com.kuan.tddinterview.springdatajpa.nplus1.fetchmodel;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.kuan.tddinterview.springdatajpa.other.BaseEntity;
-import lombok.*;
+import com.kuan.tddinterview.springdatajpa.nplus1.BaseEntity;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
@@ -14,12 +16,11 @@ import javax.persistence.*;
 @SuperBuilder
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString(exclude = "userInfo")
-public class Address extends BaseEntity {
+public class AddressFetchModel extends BaseEntity {
 
     private String city;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     @JsonBackReference
-    private UserInfo userInfo;
+    private UserInfoFetchModel userInfo;
 }

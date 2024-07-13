@@ -7,7 +7,7 @@ import javax.annotation.processing.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2024-07-13T11:09:38+0800",
+    date = "2024-07-13T13:37:42+0800",
     comments = "version: 1.5.5.Final, compiler: javac, environment: Java 17.0.6 (Amazon.com Inc.)"
 )
 public class VideoMapperImpl implements VideoMapper {
