@@ -31,7 +31,7 @@ public class NPlusOneWithBatchSizeTest {
     }
 
     @Test
-    public void should_get_2_times_select_for_display_n_plus_one_problem() {
+    public void should_get_2_times_select_for_resolve_n_plus_one_problem() {
         entityManager.clear();
         redirectOutputLog(() -> userInfoBatchSizeRepository.findAll());
 
