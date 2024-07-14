@@ -1,7 +1,6 @@
 package com.kuan.tddinterview.springdatajpa.nplus1;
 
 
-import com.kuan.tddinterview.springdatajpa.nplus1.batchsize.AddressBatchSize;
 import com.kuan.tddinterview.springdatajpa.nplus1.batchsize.UserInfoBatchSize;
 import com.kuan.tddinterview.springdatajpa.nplus1.batchsize.UserInfoBatchSizeRepository;
 import org.junit.jupiter.api.Assertions;
@@ -12,7 +11,6 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import javax.annotation.Resource;
 import javax.persistence.EntityManager;
 import java.util.List;
-import java.util.function.BiFunction;
 
 import static com.kuan.tddinterview.springdatajpa.nplus1.RedirectLogUtil.*;
 
@@ -27,7 +25,7 @@ public class NPlusOneWithBatchSizeTest {
 
     @BeforeEach
     public void setup() {
-        UserGenerator.save(userInfoBatchSizeRepository, UserGenerator.Type.BATCH_SIZE);
+        UserGenerator.save(userInfoBatchSizeRepository, Type.BATCH_SIZE);
     }
 
     @Test

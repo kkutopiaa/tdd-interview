@@ -1,7 +1,6 @@
 package com.kuan.tddinterview.springdatajpa.nplus1;
 
 
-import com.kuan.tddinterview.springdatajpa.nplus1.fetchmode.AddressFetchModel;
 import com.kuan.tddinterview.springdatajpa.nplus1.fetchmode.UserInfoFetchModel;
 import com.kuan.tddinterview.springdatajpa.nplus1.fetchmode.UserInfoFetchModelRepository;
 import org.junit.jupiter.api.Assertions;
@@ -26,7 +25,7 @@ public class NPlusOneWithFetchModeTest {
 
     @BeforeEach
     public void setup() {
-        UserGenerator.save(userInfoFetchModelRepository, UserGenerator.Type.FETCH_MODE);
+        UserGenerator.save(userInfoFetchModelRepository, Type.FETCH_MODE);
     }
 
     @Test

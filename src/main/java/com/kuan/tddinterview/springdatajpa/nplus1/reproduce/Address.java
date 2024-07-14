@@ -9,6 +9,7 @@ import lombok.experimental.SuperBuilder;
 import javax.persistence.*;
 
 
+@EqualsAndHashCode(callSuper = true)
 @Entity
 @Table
 @Data

@@ -1,7 +1,6 @@
 package com.kuan.tddinterview.springdatajpa.nplus1;
 
 
-import com.kuan.tddinterview.springdatajpa.nplus1.entitygraph.AddressEntityGraph;
 import com.kuan.tddinterview.springdatajpa.nplus1.entitygraph.UserInfoEntityGraph;
 import com.kuan.tddinterview.springdatajpa.nplus1.entitygraph.UserInfoEntityGraphRepository;
 import org.junit.jupiter.api.Assertions;
@@ -26,7 +25,7 @@ public class NPlusOneWithEntityGraphTest {
 
     @BeforeEach
     public void setup() {
-        UserGenerator.save(userInfoEntityGraphRepository, UserGenerator.Type.ENTITY_GRAPH);
+        UserGenerator.save(userInfoEntityGraphRepository, Type.ENTITY_GRAPH);
     }
 
     @Test

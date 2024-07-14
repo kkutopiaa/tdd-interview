@@ -15,7 +15,8 @@ import java.util.stream.IntStream;
 
 public class UserGenerator {
 
-    public static void save(JpaRepository repository, Type type) {
+    @SuppressWarnings({"unchecked", "rawtypes"})
+    public static <T> void save(JpaRepository<T, Long> repository, Type type) {
         List<NPlusOneEntity> users = getUsers(type);
         List entities = switch (type) {
             case REPRODUCE -> users.stream().map(e -> (UserInfo) e).toList();
@@ -56,10 +57,6 @@ public class UserGenerator {
             case ENTITY_GRAPH ->
                     List.of(AddressEntityGraph.builder().city(city0).build(), AddressEntityGraph.builder().city(city1).build());
         };
-    }
-
-    enum Type {
-        REPRODUCE, BATCH_SIZE, FETCH_MODE, ENTITY_GRAPH
     }
 
 

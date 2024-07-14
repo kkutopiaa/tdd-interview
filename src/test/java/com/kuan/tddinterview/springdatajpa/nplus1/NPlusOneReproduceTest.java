@@ -1,7 +1,5 @@
 package com.kuan.tddinterview.springdatajpa.nplus1;
 
-import com.kuan.tddinterview.springdatajpa.nplus1.reproduce.Address;
-import com.kuan.tddinterview.springdatajpa.nplus1.reproduce.UserInfo;
 import com.kuan.tddinterview.springdatajpa.nplus1.reproduce.AddressRepository;
 import com.kuan.tddinterview.springdatajpa.nplus1.reproduce.UserInfoRepository;
 import org.junit.jupiter.api.Assertions;
@@ -11,7 +9,6 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
 import javax.annotation.Resource;
 import javax.persistence.EntityManager;
-import java.util.List;
 
 import static com.kuan.tddinterview.springdatajpa.nplus1.RedirectLogUtil.*;
 
@@ -30,7 +27,7 @@ public class NPlusOneReproduceTest {
 
     @BeforeEach
     public void setup() {
-        UserGenerator.save(userInfoRepository, UserGenerator.Type.REPRODUCE);
+        UserGenerator.save(userInfoRepository, Type.REPRODUCE);
     }
 
 
