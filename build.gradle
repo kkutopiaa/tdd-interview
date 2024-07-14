@@ -7,6 +7,7 @@ plugins {
 group = 'com.kuan'
 version = '0.0.1-SNAPSHOT'
 
+
 java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(17)
@@ -36,7 +37,7 @@ dependencies {
 
     annotationProcessor "org.projectlombok:lombok-mapstruct-binding:0.2.0"
     testAnnotationProcessor "org.projectlombok:lombok-mapstruct-binding:0.2.0"
-    annotationProcessor ("org.mapstruct:mapstruct-processor:1.5.5.Final")
+    annotationProcessor("org.mapstruct:mapstruct-processor:1.5.5.Final")
     testAnnotationProcessor("org.mapstruct:mapstruct-processor:1.5.5.Final")
 
 
@@ -69,3 +70,13 @@ compileJava {
 tasks.named('test') {
     useJUnitPlatform()
 }
+
+// 显式复制resources目录下的内容到构建目录
+tasks.register('copyResources', Copy) {
+    from 'src/main/resources'
+    into 'build/resources/main'
+}
+
+// 将上述任务添加到processResources任务之前以确保资源被正确复制
+processResources.dependsOn(copyResources)
+

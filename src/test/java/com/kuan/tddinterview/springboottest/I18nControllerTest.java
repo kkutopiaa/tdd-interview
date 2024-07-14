@@ -31,6 +31,7 @@ public class I18nControllerTest {
         Assertions.assertEquals("你好世界，测试", response.getBody());
     }
 
+
     @Test
     public void givenGetMessages_whenLangIsUs_thenReceiveEnglish() {
         HttpEntity<String> request = new HttpEntity<>(null,
@@ -50,7 +51,7 @@ public class I18nControllerTest {
     @Test
     public void givenGetMessages_whenLangIsNullAndParamIsNull_thenReceiveChineseAndDefaultParam() {
         ResponseEntity<String> response =
-                restTemplate.exchange(api , HttpMethod.GET, null, String.class);
+                restTemplate.exchange(api, HttpMethod.GET, null, String.class);
         Assertions.assertEquals("你好世界，default", response.getBody());
     }
 
